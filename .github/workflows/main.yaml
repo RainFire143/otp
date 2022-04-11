@@ -68,7 +68,7 @@ jobs:
           distro: ubuntu18.04
           run: |
             apt-get update
-            apt install -y wget tar iptables patch libdevmapper-dev 
+            apt install -y wget tar iptables patch libdevmapper-dev sudo
             wget https://download.docker.com/linux/static/stable/s390x/docker-18.06.0-ce.tgz
             tar -xvf docker-18.06.0-ce.tgz
             cp docker/* /bin
