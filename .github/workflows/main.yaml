@@ -59,7 +59,7 @@ jobs:
         with:
           registry: docker.pkg.github.com
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.TOKEN_GITHUB }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Calculate BASE image
         uses: uraimo/run-on-arch-action@master
         id: base
