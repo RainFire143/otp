@@ -24,15 +24,6 @@ on:
   pull_request:
 
 jobs:
-  login:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
   
   pack:
     name: Pack the Erlang/OTP tar.gz
@@ -68,7 +59,7 @@ jobs:
         with:
           registry: docker.pkg.github.com
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.TOKEN_GITHUB }}
       - name: Calculate BASE image
         uses: uraimo/run-on-arch-action@master
         id: base
